@@ -1,5 +1,5 @@
 const mysql =   require('mysql');
-                require('dotenv').load();
+                require('dotenv').config('./models/.env');
 
 const conn = mysql.createPool({
     host: process.env.MYSQL_HOST,
