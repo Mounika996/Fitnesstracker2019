@@ -41,7 +41,7 @@ module.exports = function(app) {
   app.use(cookieParser());
   app.use(compress());
   app.use(methodOverride());
-  app.use(multer({dest: "./public/uploads/"}));
+  app.use(multer({dest: "./public/uploads/"}).any());
   app.use(cors());
 
   app.use(session({
