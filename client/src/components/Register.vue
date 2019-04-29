@@ -1,10 +1,10 @@
 <template>
 	<!-- start: REGISTRATION -->
-	<div class="row" style="padding: 0; margin: 0;">
+	<div class="row" style="padding: 0; margin: 0; background: url('background.jpg') center/cover no-repeat; width: 100%; min-height: 757px;">
 		<nav class="navbar navbar-inverse col-md-12" style="position: fixed; z-index: 1001;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<router-link class="nav-link" to="/"> <h3 style="color: white;">Fitness-Tracker</h3></router-link>
+					<router-link class="nav-link" to="/"> <img src='logo.jpg' width="60px;"></router-link>
 				</div>
 				<ul class="nav navbar-nav navbar-right">					
 				</ul>

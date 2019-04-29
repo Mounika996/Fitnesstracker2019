@@ -1,7 +1,8 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import VueResource from 'vue-resource'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import VueResource from 'vue-resource';
+import VueSocketio from 'vue-socket.io';
 
 Vue.use(VueResource);
 Vue.config.productionTip = true;
@@ -13,6 +14,9 @@ var data = {
 
 const config = require('./config');
 window.config = config;
+Vue.use(new VueSocketio({
+	connection: window.config.SERVER_URL
+}));
 
 new Vue({
 	render: h => h(App),
@@ -21,8 +25,8 @@ new Vue({
 	methods: {
 		changePerson: function() {
 			this.person = {
-				first: 'mounika',
-				last: 'kamjula'
+				first: 'Betty',
+				last: 'Williams'
 			};
 		}
 	}
