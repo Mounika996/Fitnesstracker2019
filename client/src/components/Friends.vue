@@ -68,10 +68,10 @@ export default {
 	data() {
 		return {
 			error: '',
-			friends: [{name: "Laris", mail: "laris0810@mail.com", available: true},
-						{name: "Vinny", mail: "vinny@mail.com", available: false}],
-			users: [{email: "laris0810@mail.com"},
-					{email: "vinny@mail.com"}]
+			friends: [{name: "sai", mail: "sai@mail.com", available: true},
+						{name: "Mounika", mail: "mounika@mail.com", available: false}],
+			users: [{email: "sai@mail.com"},
+					{email: "mounika@mail.com"}]
 		}
 	},
 	methods: {

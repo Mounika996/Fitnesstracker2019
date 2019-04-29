@@ -1,18 +1,3 @@
-/*
- Navicat Premium Data Transfer
-
- Source Server         : New Connection
- Source Server Type    : MySQL
- Source Server Version : 100138
- Source Host           : localhost:3306
- Source Schema         : fitness_db
-
- Target Server Type    : MySQL
- Target Server Version : 100138
- File Encoding         : 65001
-
- Date: 21/03/2019 22:34:42
-*/
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;

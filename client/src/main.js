@@ -25,8 +25,8 @@ new Vue({
 	methods: {
 		changePerson: function() {
 			this.person = {
-				first: 'Betty',
-				last: 'Williams'
+				first: 'Mounika',
+				last: 'kamjula'
 			};
 		}
 	}
