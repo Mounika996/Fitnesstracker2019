@@ -14,6 +14,24 @@
 				</ul>
 			</div>
 		</nav>
+		<div class="container" style="padding-top: 100px;">
+			<h3> Physical fitness is a state of health and well-being and, more specifically, the ability to perform aspects of sports, occupations and daily activities. </h3>
+			<h3>Physical fitness is generally achieved through proper nutrition, moderate-vigorous physical exercise, and sufficient rest.</h3>
+			<h4> Mental fitness is just as important as physical fitness, and shouldn't be neglected. <br/>
+			Including mental dexterity exercises into your daily routine can help you reap the benefits of a sharper mind and a healthier body for years to come. 
+			Mental fitness means keeping your brain and emotional health in tip-top shape.
+			</h4>
+
+			<h5> Advantages of fitness<br/>
+			It Can Make You Feel Happier. ...<br/>
+			It Can Help With Weight Loss. ...<br/>
+			It Is Good for Your Muscles and Bones. ...<br/>
+			It Can Increase Your Energy Levels. ...<br/>
+			It Can Reduce Your Risk of Chronic Disease. ...<br/>
+			It Can Help Skin Health. ...<br/>
+			It Can Help Your Brain Health and Memory. ...<br/>
+			It Can Help With Relaxation and Sleep Quality.</h5>
+		</div>
 	</div>
 </template>
 <script>
