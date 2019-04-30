@@ -1,3 +1,18 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : New Connection
+ Source Server Type    : MySQL
+ Source Server Version : 100138
+ Source Host           : localhost:3306
+ Source Schema         : fitness_db
+
+ Target Server Type    : MySQL
+ Target Server Version : 100138
+ File Encoding         : 65001
+
+ Date: 21/03/2019 22:34:42
+*/
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
@@ -31,7 +46,7 @@ CREATE TABLE `tbl_friends`  (
 -- ----------------------------
 INSERT INTO `tbl_friends` VALUES (1, 'admin', 'user2', '2019-03-20 12:49:39');
 INSERT INTO `tbl_friends` VALUES (2, 'admin', 'user1', '2019-03-20 12:58:39');
-INSERT INTO `tbl_friends` VALUES (3, 'admin', 'mounika', '2019-03-21 21:02:54');
+INSERT INTO `tbl_friends` VALUES (3, 'admin', 'Jhon', '2019-03-21 21:02:54');
 
 -- ----------------------------
 -- Table structure for tbl_heartbeats
@@ -106,8 +121,8 @@ CREATE TABLE `tbl_users`  (
 -- ----------------------------
 -- Records of tbl_users
 -- ----------------------------
-INSERT INTO `tbl_users` VALUES (1, 'admin', 'mounika', 'kamjula', '1994-03-25', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 179, 78, '2019-03-21 22:33:01');
-INSERT INTO `tbl_users` VALUES (2, 'user1', 'teja', 'utlapalli', '1969-02-01', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 191, 89, '2019-03-20 12:58:06');
-INSERT INTO `tbl_users` VALUES (3, 'user2', 'sowjanya', 'vandekari', '1979-05-07', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 183, 72, '2019-03-20 13:00:15');
+INSERT INTO `tbl_users` VALUES (1, 'admin', 'Xu', 'Hao', '1994-03-25', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 179, 78, '2019-03-21 22:33:01');
+INSERT INTO `tbl_users` VALUES (2, 'user1', 'Yates', 'Jhon', '1969-02-01', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 191, 89, '2019-03-20 12:58:06');
+INSERT INTO `tbl_users` VALUES (3, 'user2', 'George', 'sphere', '1979-05-07', '*514FC2971F3E94BB16F25C396219DFDF01D02443', 183, 72, '2019-03-20 13:00:15');
 
 SET FOREIGN_KEY_CHECKS = 1;

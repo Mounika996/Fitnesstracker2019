@@ -4,14 +4,40 @@ var path = require('path'),
 	db = require(path.resolve('./config/db')),
 	pool = db.pool;
 var utils = require(path.resolve('./app/models/utils'));
-function getUserByIdAndPwdm(userID, userPwd, callback) {
+function getUserByIdAndPwdm(email, userPwd, callback) {
 	pool.getConnection( function(err, connection) {
 		connection.beginTransaction( function (err) {
 			if (err) {
 				connection.release();
 				callback(err, null);
 			} else {
-				var query = connection.query('SELECT * FROM tbl_users WHERE id="' + userID + '" AND password=PASSWORD("' + userPwd + '") ', function (err, rows) {
+				var query = connection.query('SELECT * FROM tbl_users WHERE email="' + email + '" AND password=PASSWORD("' + userPwd + '") ', function (err, rows) {
+					if (err) {
+						connection.release();
+						callback(err, null);
+					} else {
+						connection.commit( function (err) {
+							connection.release();
+							if (err) {
+								callback(err, null);
+							} else {
+								callback(err, rows);
+							}
+						});
+					}
+				});
+			}
+		});
+	});
+}
+function getAllm(callback) {
+	pool.getConnection( function(err, connection) {
+		connection.beginTransaction( function (err) {
+			if (err) {
+				connection.release();
+				callback(err, null);
+			} else {
+				var query = connection.query('SELECT * FROM tbl_users', function (err, rows) {
 					if (err) {
 						connection.release();
 						callback(err, null);
@@ -33,10 +59,9 @@ function getUserByIdAndPwdm(userID, userPwd, callback) {
 
 function addUserm(data, callback) {
 	var user = new Object({
-		'id': data.user_id,
-		'firstname': data.firstname,
-		'lastname': data.lastname,
-		'birthday': data.birthday,
+		'email': data.email,
+		'name': data.name,
+		'age': data.age,
 		'height': data.height,
 		'weight': data.weight,
 		'created_at': utils.getDateNow()
@@ -47,7 +72,7 @@ function addUserm(data, callback) {
 				connection.release();
 				callback(err, null);
 			} else {
-				var query = connection.query('SELECT * FROM tbl_users where id = "' + data.user_id + '"', function(err, result) {
+				var query = connection.query('SELECT * FROM tbl_users where email = "' + data.email + '"', function(err, result) {
 					if( err ) {
 						connection.release();
 						console.log('query');
@@ -61,6 +86,7 @@ function addUserm(data, callback) {
 						var query = connection.query('INSERT into tbl_users SET ? , password=PASSWORD("' + data.password + '")', user, function (err, result) {
 							if (err) {
 								connection.release();
+								console.log(err);
 								callback(err, null);
 							} else {
 								connection.commit( function (err) {
@@ -90,7 +116,6 @@ function updateUserm(data, callback) {
 		'weight': data.weight,
 		'created_at': utils.getDateNow()
 	});
-	console.log(data.user_id);
 	pool.getConnection( function(err, connection) {
 		connection.beginTransaction( function (err) {
 			if (err) {
@@ -143,3 +168,4 @@ function updateUserm(data, callback) {
 exports.getUserByIdAndPwdm = getUserByIdAndPwdm;
 exports.addUserm = addUserm;
 exports.updateUserm = updateUserm;
+exports.getAllm = getAllm;

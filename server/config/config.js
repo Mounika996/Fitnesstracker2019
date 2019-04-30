@@ -33,7 +33,8 @@ var config = {
     condition_error: 1,
     token_error: 2,
     server_error: 3
-  }
+  },
+  online: []
 };
 
 module.exports = config;
