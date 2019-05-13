@@ -30,7 +30,7 @@ function getUserByIdAndPwdm(email, userPwd, callback) {
 		});
 	});
 }
-function getAllm(callback) {
+function getAllm(data, callback) {
 	pool.getConnection( function(err, connection) {
 		connection.beginTransaction( function (err) {
 			if (err) {

@@ -3,8 +3,10 @@ import App from './App.vue';
 import router from './router';
 import VueResource from 'vue-resource';
 import VueSocketio from 'vue-socket.io';
+import vSelect from 'vue-select';
 
 Vue.use(VueResource);
+Vue.component('v-select', vSelect);
 Vue.config.productionTip = true;
 Vue.http.headers.common['Access-Control-Allow-Origin'] = '*';
 

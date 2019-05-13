@@ -20,10 +20,8 @@
 				
 			<div class="input-group" style="padding-bottom: 20px; z-index: 1000;">
 				<span class="input-group-addon"><label>Add friends from Userlist:</label>
-				<select class="form-control" v-model="follower">
-					<option></option>
-					<option v-for="ff in users" v-bind:key = "ff.email">{{ ff.email }}</option>
-				</select>
+				<v-select label="email" :options="users" v-model="follower">
+				</v-select>
 				<a v-on:click="addClick" class="btn btn-primary pull-right">
 				<i class="fa fa-plus"></i> Add </a></span>
 			</div>
@@ -75,6 +73,18 @@ export default {
 		}
 	},
 	methods: {
+		search_Change: function( {type, target} ) {
+			var data = {};
+			data['search'] = this.follower;
+			this.$http.post(window.config.SERVER_URL + '/getAll', data)
+			.then(response => {
+				var rData = response.data;
+				this.users = rData;
+			})
+			.catch(e => {
+				this.errors.push(e);
+			});
+		},
 		someone_logout: function(email) {
 			for(var i = 0; i < this.friends.length ; i ++) {
 				if(this.friends[i].email == email) {

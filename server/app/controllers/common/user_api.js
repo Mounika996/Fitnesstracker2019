@@ -35,7 +35,8 @@ function login(req, res, next) {
 	});
 }
 function getAll(req, res, next) {
-	user_model.getAllm(function (err, result) {
+	var data = req.body;
+	user_model.getAllm(data, function (err, result) {
 		if (err) {
 			console.log('getAll: Error');
 		} else {
